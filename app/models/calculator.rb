@@ -1,6 +1,7 @@
 class Calculator < ApplicationRecord
 	def self.add(numbers)
-		return 0 if numbers.empty?
-		numbers.to_i
+		delimiter_pattern = ",|\\n"
+		numbers_array = numbers.split(/#{delimiter_pattern}/)
+		numbers_array.map(&:to_i).sum
 	end
 end
