@@ -32,5 +32,13 @@ RSpec.describe Calculator, type: :model do
     it 'allows delimiters of any length' do
       expect(Calculator.add("//[***]\n1***2***3")).to eq(6)
     end
+
+    it 'allows multiple delimiters' do
+      expect(Calculator.add("//[*][%]\n1*2%3")).to eq(6)
+    end
+
+    it 'allows multiple delimiters with length longer than one char' do
+      expect(Calculator.add("//[**][%%]\n1**2%%3")).to eq(6)
+    end
   end
 end
