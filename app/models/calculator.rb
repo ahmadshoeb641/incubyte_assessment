@@ -12,6 +12,9 @@ class Calculator < ApplicationRecord
     numbers_array = numbers.split(/#{delimiter_pattern}/)
     negatives = numbers_array.select { |num| num.to_i.negative? }
     raise "negative numbers not allowed: #{negatives.join(', ')}" unless negatives.empty?
+
+    numbers_array.reject! { |num| num.to_i > 1000 }
+
     numbers_array.map(&:to_i).sum
   end
 end
