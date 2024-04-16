@@ -17,5 +17,12 @@ RSpec.describe Calculator, type: :model do
     it 'allows new lines between numbers' do
       expect(Calculator.add("1\n2,3")).to eq(6)
     end
+    it 'supports different delimiters' do
+      expect(Calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it 'throws an exception for negative numbers' do
+      expect { Calculator.add("1,-2,3,-4") }.to raise_error("negative numbers not allowed: -2, -4")
+    end
   end
 end
