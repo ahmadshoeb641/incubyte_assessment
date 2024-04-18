@@ -3,7 +3,7 @@ Welcome to the String Calculator TDD Kata! This assessment is designed to evalua
 
 ## Set up the project
 ### Clone the repository:
-`git clone https://github.com/ahmadshoeb641/incubyte_assessment.git`
+`git clone https://github.com/ahmadshoeb641/string_calculator.git`
 
 ### Change into the project directory:
 `cd string_calculator`
